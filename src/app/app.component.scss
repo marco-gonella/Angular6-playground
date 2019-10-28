@@ -1,0 +1,16 @@
+.app-container {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: calc(100vh - 56px);
+}
+
+header {}
+
+.active-link{
+    color: darkviolet;
+}
+
+main {
+    flex: 1;
+}

@@ -1,0 +1,12 @@
+<div class="mt-4">
+  <h2>Dettaglio utente</h2>
+  <div class="d-flex flex-column my-4 userInfo">
+    <span>Nome: <strong>{{currentUser.name}}</strong></span>
+    <span>Cognome: <strong>{{currentUser.surname}}</strong></span>
+    <span>email: <strong>{{currentUser.email}}</strong></span>
+  </div>
+
+  <h3>Modifica Utente</h3>
+  <app-user-form [operation]="'modify'" [user]="currentUser" 
+  (updateUser)="updateCurrentUser($event)"></app-user-form>
+</div>

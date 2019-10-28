@@ -1,0 +1,57 @@
+<div class="mt-4">
+  <form #f="ngForm" (ngSubmit)="save(f)">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" aria-describedby="errorName" id="name" placeholder="Inserisci Nome"
+        [(ngModel)]="formUser.name" name="name" pattern="[A-Z][\w]+" required>
+      <small *ngIf="f.controls?.name?.invalid" id="errorName" class="form-text text-muted error">
+        {{f.hasError('pattern', 'name') ? "Pattern non valido" : (validateRequired && f.hasError('required', 'name') ? "Il campo è vuoto" : '')}}
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="surname">Cognome</label>
+      <input type="text" class="form-control" id="surname" placeholder="Inserisci Cognome" [(ngModel)]="formUser.surname"
+        pattern="[A-Z][\w]+" name="surname" required>
+      <small *ngIf="f.controls?.surname?.invalid" id="errorName" class="form-text text-muted error">
+        {{f.hasError('pattern', 'surname') ? "Pattern non valido" : (validateRequired ? "Il campo è vuoto" : '')}}
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Inserisci Email" name="email"
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" [(ngModel)]="formUser.email" required> <small
+        *ngIf="f.controls?.email?.invalid" id="errorName" class="form-text text-muted error">
+        {{f.hasError('pattern', 'email') ? "Pattern non valido" : (validateRequired ? "Il campo è vuoto" : '')}}
+      </small>
+    </div>
+    <button type="submit" class="btn btn-outline-primary" (click)="validateRequired = true;">Salva</button>
+  </form>
+  <!-- <hr> -->
+  <!-- <h3>Reactive form</h3> -->
+  <!-- <form [formGroup]="reactiveForm" (ngSubmit)="save(reactiveForm)">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="name" placeholder="Inserisci Nome" formControlName="name" name="name">
+      <small *ngIf="reactiveForm.controls?.name?.invalid" id="errorName" class="form-text text-muted error">
+        {{reactiveForm.hasError('pattern', 'name') ? "Pattern non valido" : (validateRequired ? "Il campo è vuoto" : '')}}
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="surname">Cognome</label>
+      <input type="text" class="form-control" id="surname" placeholder="Inserisci Cognome" formControlName="surname"
+        name="surname">
+      <small *ngIf="reactiveForm.controls?.surname?.invalid" id="errorName" class="form-text text-muted error">
+        {{reactiveForm.hasError('pattern', 'surname') ? "Pattern non valido" : (validateRequired ? "Il campo è vuoto" : '')}}
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="Inserisci Email" formControlName="email"
+        name="email">
+      <small *ngIf="reactiveForm.controls?.email?.invalid" id="errorName" class="form-text text-muted error">
+        {{reactiveForm.hasError('pattern', 'email') ? "Pattern non valido" : (validateRequired ? "Il campo è vuoto" : '')}}
+      </small>
+    </div>
+    <button type="submit" class="btn btn-outline-primary" (click)="validateRequired = true;">Salva</button>
+  </form> -->
+</div>

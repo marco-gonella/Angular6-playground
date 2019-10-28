@@ -1,0 +1,133 @@
+.user-card {
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    padding: 14px 40px 18px 36px;
+
+    img {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.placeholder-card {
+    border-radius: 4px;
+    border: 4px dashed #ddd;
+    color: #ddd;
+
+
+    app-user-form {
+        width: 50%;
+    }
+
+    .clickable {
+        cursor: pointer;
+    }
+
+    .graph {
+        font-size: 230px;
+        height: 100%;
+        width: 30px;
+        position: relative;
+
+        span {
+            position: absolute;
+            top: -205px;
+            height: auto;
+            font-weight: 100;
+        }
+    }
+}
+
+
+
+//loader
+$loader-color: orange;
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid $loader-color;
+    border-color: $loader-color transparent $loader-color transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//fine loader
+
+
+
+.main {
+    display: block;
+    position: relative;
+    margin-left: 15px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+/* Hide the default checkbox */
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+/* Creating a custom checkbox 
+based on demand */
+.geekmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 2px solid black;
+    border-radius: 4px;
+    color: black;
+    background-color: white;
+}
+
+/* Checkmark to be shown in checkbox */
+/* It is not be shown when not checked */
+.geekmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Display checkmark when checked */
+.main input:checked~.geekmark:after {
+    display: block;
+}
+
+/* Styling the checkmark using webkit */
+/* Rotated the rectangle by 45 degree and  
+showing only two border to make it look 
+like a tickmark */
+.main .geekmark:after {
+    left: 8px;
+    bottom: 5px;
+    width: 6px;
+    height: 12px;
+    border: 2px solid black;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

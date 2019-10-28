@@ -1,0 +1,45 @@
+<div class="app-container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/home']">Angular 6 playground</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <!-- <a class="nav-link" [routerLink]="['/home']">Home
+              <span class="sr-only">(current)</span>
+            </a> -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4 d-flex align-items-center">
+          <img src="assets/images/cap.png" style="height:35px" class="mr-1" /> Menu</h1>
+        <div class="list-group">
+          <a [routerLink]="['/home']" routerLinkActive="active-link" class="list-group-item">Home</a>
+          <a [routerLink]="['/users']" routerLinkActive="active-link" class="list-group-item">CRUD Utenti</a>
+          <a [routerLink]="['/i18n']" routerLinkActive="active-link" class="list-group-item">Internazionalizzazione</a>
+        </div>
+
+      </div>
+      <div class="col-lg-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+  <!-- <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">footer di prova</p>
+    </div>
+  </footer> -->
+</div>
